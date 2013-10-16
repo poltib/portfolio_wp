@@ -9,7 +9,7 @@
 
 	    	<article>
 	    		<div class="text">
-				<h3><?php the_title(); ?></h3>
+				<h3><?php the_title(); ?> <span><?php the_terms( $post->ID, 'Tag', '', ' / ' ); ?></span></h3>
 				<figure><img src="<?php the_field('image'); ?>" alt=""></figure>
 				<p><?php the_content(); ?></p>
 				</div>

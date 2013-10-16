@@ -146,12 +146,10 @@
 					<!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					  
-					    <a href="<?php the_permalink(); ?>">
 					    	<article>
 								<h3><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
 								<p><?php the_excerpt(); ?></p>
 							</article>
-						</a>
 					  <?php endwhile; ?>
 					  <!-- end of the loop -->
 					  <!-- pagination here -->

@@ -16,7 +16,7 @@
 <?php endwhile; ?>
 	</ul>
 <?php else:  ?>
-	<p>Pas de commentaires</p>
+	<p>Pas de commentaire</p>
 <?php endif; ?>
 
 <?php $comments_args = array(

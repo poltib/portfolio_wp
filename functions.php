@@ -84,7 +84,6 @@
 	
 
 	function create_projets_taxonomies() {
-	// Add new taxonomy, make it hierarchical (like categories)
 	$labels = array(
 		'name'              => _x( 'Genres', 'taxonomy general name' ),
 		'singular_name'     => _x( 'Genre', 'taxonomy singular name' ),
@@ -105,10 +104,35 @@
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'important' ),
+		'rewrite'           => array( 'slug' => 'genre' ),
 	);
 
 	register_taxonomy( 'Genre', array( 'projets' ), $args );
+
+	$labels2 = array(
+		'name'              => _x( 'Tags', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Tag', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Tags' ),
+		'all_items'         => __( 'All Tags' ),
+		'parent_item'       => __( 'Parent Tag' ),
+		'parent_item_colon' => __( 'Parent Tag:' ),
+		'edit_item'         => __( 'Edit Tag' ),
+		'update_item'       => __( 'Update Tag' ),
+		'add_new_item'      => __( 'Add New Tag' ),
+		'new_item_name'     => __( 'New Tag Name' ),
+		'menu_name'         => __( 'Tag' ),
+	);
+
+	$args2 = array(
+		'hierarchical'      => true,
+		'labels'            => $labels2,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'tag' ),
+	);
+
+	register_taxonomy( 'Tag', array( 'projets' ), $args2 );
 
 }
 

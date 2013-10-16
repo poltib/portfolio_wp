@@ -1020,7 +1020,7 @@ li.comment article > a:hover {
 .projets article:first-child{border-bottom: none;}
 
 /* line 440, ../scss/screen.scss */
-.projets article a {
+.detail {
   position: absolute;
   top: 0.5em;
   right: 1em;
@@ -1028,10 +1028,16 @@ li.comment article > a:hover {
   background-color: rgba(226, 145, 56, 0.6);
   padding: 0.3em;
   color: white;
+  border-bottom: none;
 }
 /* line 449, ../scss/screen.scss */
-.projets article a:hover {
+.detail:hover {
   background-color: #e29138;
+  color: white;
+}
+
+.projets article{
+  margin-bottom: 0.5em;
 }
 /* line 457, ../scss/screen.scss */
 .projets article figure img {
@@ -1117,7 +1123,7 @@ li.comment article > a:hover {
     margin-right: 0;
   }
 
-
+  .interrest{ border-top:0.3em solid rgba(0,0,0,0.1);}
   /* line 510, ../scss/screen.scss */
   #position {
     position: static;
@@ -1270,10 +1276,12 @@ li.comment article > a:hover {
     width: 59.18367%;
     float: left;
     margin-right: 2.04082%;
+    border-right: 0.3em solid rgba(0,0,0,0.1);
   }
   .interrest{
-    width:38.77551%;
+    width:38%;
     float: right;
     margin-right: 0;
+    border-top: none;
   }
 }
