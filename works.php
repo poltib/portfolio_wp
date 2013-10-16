@@ -12,7 +12,7 @@
 	<section class="hi">
 		<div class="text">
 			<h2 title="projets" role="heading" aria-level="2">
-			<?php the_title() ?>
+			<?php the_field('titre') ?>
 			</h2>
 			<p><?php the_content() ?></p>
 		</div>
@@ -23,7 +23,7 @@
 	<h2 class="hidden">Projets</h2>
 	<?php 
 	// the query
-	$the_query = new WP_Query( 'post_type=projets' ); ?>
+	$the_query = new WP_Query( array( 'post_type' => 'projets' , 'Genre' => 'projets')); ?>
 
 	<?php if ( $the_query->have_posts() ) : ?>
 

@@ -17,13 +17,9 @@
 
 			<section class="projects">
 				<div class="text">
-					<h2>Réalisations</h2>
-					<p>Voici un aperçu de mes dernières réalisations.</p>
-					<p> Pour plus d'informations relative à chaque projets je vous invite à aller faire un petit tour dans la section <a href="projets.html">projets</a>.</p>
-				</div>
 					<?php 
 					// the query
-					$the_query = new WP_Query( 'post_type=projets&Genres=important' ); ?>
+					$the_query = new WP_Query( array( 'post_type' => 'projets' , 'Genre' => 'intro')  ); ?>
 
 					<?php if ( $the_query->have_posts() ) : ?>
 
@@ -31,7 +27,30 @@
 
 					  <!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						<div class="photos-left">
+						 	<h2><?php the_title() ?></h2>
+							<div><?php the_content() ?></div>
+					  <?php endwhile; ?>
+					  <!-- end of the loop -->
+
+					  <!-- pagination here -->
+
+					  <?php wp_reset_postdata(); ?>
+
+					<?php else:  ?>
+					  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+					<?php endif; ?>
+				</div>
+
+					<?php 
+					// the query
+					$the_query = new WP_Query( array( 'post_type' => 'projets' , 'Genre' => 'important')  ); ?>
+
+					<?php if ( $the_query->have_posts() ) : ?>
+
+					  <!-- pagination here -->
+						<div class="photos-right">
+					  <!-- the loop -->
+					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						 	<a href="<?php the_permalink(); ?>"><figure>
 							<img src="<?php the_field('image')?>" alt="">
 							<figcaption>
@@ -39,10 +58,40 @@
 								<p><?php the_excerpt(); ?></p>
 							</figcaption>
 							</figure></a>
-						</div>
 					  <?php endwhile; ?>
 					  <!-- end of the loop -->
+						</div>
+					  <!-- pagination here -->
 
+					  <?php wp_reset_postdata(); ?>
+
+					<?php else:  ?>
+					  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+					<?php endif; ?>
+
+
+					<?php 
+					// the query
+					$the_query = new WP_Query( array( 'post_type' => 'projets' , 'Genre' => 'moins')  ); ?>
+
+					<?php if ( $the_query->have_posts() ) : ?>
+
+					  <!-- pagination here -->
+						<div class="photos-left">
+					  <!-- the loop -->
+					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+						
+						 	<a href="<?php the_permalink(); ?>"><figure>
+							<img src="<?php the_field('image')?>" alt="">
+							<figcaption>
+								<h3><?php the_title(); ?></h3>
+								<p><?php the_excerpt(); ?></p>
+							</figcaption>
+							</figure></a>
+						
+					  <?php endwhile; ?>
+					  <!-- end of the loop -->
+						</div>	
 					  <!-- pagination here -->
 
 					  <?php wp_reset_postdata(); ?>
@@ -66,7 +115,7 @@
 				  
 				    <a href="<?php the_permalink(); ?>">
 				    	<article>
-							<h3><?php the_title(); ?> <span><?php the_date(); ?></span></h3>
+							<h3><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
 							<span>Posté par <?php the_author() ?></span>
 							<p><?php the_excerpt(); ?></p>
 							<span class="more">Lire la suite</span>
@@ -84,11 +133,36 @@
 				  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 				<?php endif; ?>
 				<div class="interrest">
+
+
 					<h2>Interrests</h2>
-					<article><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit,</p></article>
-					<article><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit,</p></article>
-					<article><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit,</p></article>
-					<article><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit,</p></article>
+						<?php 
+					// the query
+					$the_query = new WP_Query( 'post_type=interrests'); ?>
+
+					<?php if ( $the_query->have_posts() ) : ?>
+
+					  <!-- pagination here -->
+					<!-- the loop -->
+					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+					  
+					    <a href="<?php the_permalink(); ?>">
+					    	<article>
+								<h3><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
+								<p><?php the_excerpt(); ?></p>
+							</article>
+						</a>
+					  <?php endwhile; ?>
+					  <!-- end of the loop -->
+					  <!-- pagination here -->
+
+					  <?php wp_reset_postdata(); ?>
+
+					<?php else:  ?>
+					  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
+					<?php endif; ?>
+
+
 				</div>
 			</section>
 

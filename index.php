@@ -6,7 +6,7 @@
 	<h2 class="hidden">Liste des articles</h2>
 					<?php 
 					// the query
-					$the_query = new WP_Query( 'post_type=post&posts_per_page=4' ); ?>
+					$the_query = new WP_Query( 'post_type=post' ); ?>
 
 					<?php if ( $the_query->have_posts() ) : ?>
 
@@ -16,7 +16,7 @@
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					   <a href="<?php the_permalink(); ?>">
 					    	<article>
-								<h3 class="post"><?php the_title(); ?> <span><?php the_date(); ?></span></h3>
+								<h3 class="post"><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
 								<span><?php the_author() ?></span>
 								<p><?php the_excerpt(); ?></p>
 								<span class="comm"><?php comments_number(); ?></span>

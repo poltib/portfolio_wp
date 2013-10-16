@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
-        <title>Jeremy Thiry <?php wp_title(); ?></title>
+        <title><?php bloginfo( 'name' ); ?> <?php wp_title(); ?></title>
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
@@ -13,7 +13,7 @@
 <body>
 	<div class="site">
 		<header role="banner">
-	<a href="<?php echo(site_url()) ?>"><div id="logo"><h1><?php _e('Jérémy Thiry') ?></h1><span>web</span></div></a>
+	<a href="<?php echo(site_url()) ?>"><div id="logo"><h1><?php bloginfo( 'name' ); ?></h1><span><?php bloginfo( 'description' ); ?></span></div></a>
 
 	<nav>
 		<?php 

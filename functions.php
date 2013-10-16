@@ -69,6 +69,17 @@
 				'supports' => array(),
 				) 
 			);
+		register_post_type( 'interrests', 
+			array(
+				'labels' => array(
+					'name' => __('Interrests'),
+					'singular_name' => __('Interrest')
+					),
+				'public' => true,
+				'has_archive' => true,
+				'supports' => array(),
+				) 
+			);
 	}
 	
 
