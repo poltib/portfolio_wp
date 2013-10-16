@@ -21,11 +21,9 @@
 					<p>Voici un aperçu de mes dernières réalisations.</p>
 					<p> Pour plus d'informations relative à chaque projets je vous invite à aller faire un petit tour dans la section <a href="projets.html">projets</a>.</p>
 				</div>
-				<div class="photos-right">
-
 					<?php 
 					// the query
-					$the_query = new WP_Query( 'post_type=projets' ); ?>
+					$the_query = new WP_Query( 'post_type=projets&Genres=important' ); ?>
 
 					<?php if ( $the_query->have_posts() ) : ?>
 
@@ -33,11 +31,15 @@
 
 					  <!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					  
-					    <a href="<?php the_permalink(); ?>">
+						<div class="photos-left">
+						 	<a href="<?php the_permalink(); ?>"><figure>
+							<img src="<?php the_field('image')?>" alt="">
+							<figcaption>
 								<h3><?php the_title(); ?></h3>
 								<p><?php the_excerpt(); ?></p>
-							</a>
+							</figcaption>
+							</figure></a>
+						</div>
 					  <?php endwhile; ?>
 					  <!-- end of the loop -->
 
@@ -48,7 +50,6 @@
 					<?php else:  ?>
 					  <p><?php _e( 'Sorry, no posts matched your criteria.' ); ?></p>
 					<?php endif; ?>
-				</div>
 			</section>
 			<section class="news">
 				<?php 

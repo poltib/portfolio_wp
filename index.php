@@ -2,7 +2,6 @@
 	get_header();
 	// afficheBonjour();
 ?>
-
 <section class="news blog">
 	<h2 class="hidden">Liste des articles</h2>
 					<?php 
