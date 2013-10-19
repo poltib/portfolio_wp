@@ -5,10 +5,10 @@
 
 	<li class="comment">
 		
-		<article>
-			<h5><a href="<?php comment_author_email() ?>"><?php comment_author() ?></a> a dit&nbsp;:</h5>
-			<span><?php comment_date() ?></span>
-			<p><?php comment_text() ?></p>
+		<article role="article" itemscope itemtype="http://schema.org/Article">
+			<h5 role="heading" aria-level="5" itemprop="author"><a href="<?php comment_author_email() ?>"><?php comment_author() ?></a> a dit&nbsp;:</h5>
+			<span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span>
+			<div itemprop="text"><?php comment_text() ?></div>
 		</article>
 
 	</li>
@@ -29,7 +29,7 @@
         'email' =>
 	      '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
 	      ( $req ? '<span class="required">*</span>' : '' ) .
-	      '<input id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+	      '<input aria-required="true" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 	      '" size="30"' . $aria_req . ' /></p>',
 
 	    'url' =>

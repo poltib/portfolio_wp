@@ -14,14 +14,14 @@
 
 					  <!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-					   <a href="<?php the_permalink(); ?>">
-					    	<article>
-								<h3 class="post"><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
-								<span><?php the_author() ?></span>
-								<p><?php the_excerpt(); ?></p>
-								<span class="comm"><?php comments_number(); ?></span>
-							</article>
-						</a>
+						   <a href="<?php the_permalink(); ?>">
+						    	<article role="article" itemscope itemtype="http://schema.org/Article">
+									<h3 class="post" role="heading" aria-level="3" itemprop="name"><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
+									<span itemprop="author"><?php the_author() ?></span>
+									<div itemprop="text"><?php the_excerpt(); ?></div>
+									<span class="comm"><?php comments_number(); ?></span>
+								</article>
+							</a>
 					  <?php endwhile; ?>
 					  <!-- end of the loop -->
 

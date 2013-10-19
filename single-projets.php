@@ -7,9 +7,9 @@
 	<?php if(have_posts()): ?>
 		<?php while(have_posts()): the_post(); ?>
 
-	    	<article>
+	    	<article role="article">
 	    		<div class="text">
-				<h3><?php the_title(); ?> <span><?php the_terms( $post->ID, 'Tag', '', ' / ' ); ?></span></h3>
+				<h3 class="post" role="heading" aria-level="3"><?php the_title(); ?> <span><?php the_terms( $post->ID, 'Competence', '', ' / ' ); ?></span></h3>
 				<figure><img src="<?php the_field('image'); ?>" alt=""></figure>
 				<p><?php the_content(); ?></p>
 				</div>

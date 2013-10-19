@@ -32,12 +32,12 @@
 	  <!-- the loop -->
 	  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
-	    	<article>
+	    	<article role="article">
 	    		<a class="detail" href="<?php the_permalink(); ?>">Détails sur ce projet</a>
-				<h3><?php the_title(); ?></h3>
+				<h3 role="heading" aria-level="3"><?php the_title(); ?></h3>
 				<figure><img src="<?php the_field('image'); ?>" alt="<?php the_title(); ?>"></figure>
 				<p><?php the_content(); ?></p>
-				<div><?php the_terms( $post->ID, 'Tag', 'Technologies: ', ' / ' ); ?></div>
+				<div><?php the_terms( $post->ID, 'Competence', 'Technologies: ', ' / ' ); ?></div>
 				
 			</article>
 

@@ -110,17 +110,17 @@
 	register_taxonomy( 'Genre', array( 'projets' ), $args );
 
 	$labels2 = array(
-		'name'              => _x( 'Tags', 'taxonomy general name' ),
-		'singular_name'     => _x( 'Tag', 'taxonomy singular name' ),
-		'search_items'      => __( 'Search Tags' ),
-		'all_items'         => __( 'All Tags' ),
-		'parent_item'       => __( 'Parent Tag' ),
-		'parent_item_colon' => __( 'Parent Tag:' ),
-		'edit_item'         => __( 'Edit Tag' ),
-		'update_item'       => __( 'Update Tag' ),
-		'add_new_item'      => __( 'Add New Tag' ),
-		'new_item_name'     => __( 'New Tag Name' ),
-		'menu_name'         => __( 'Tag' ),
+		'name'              => _x( 'Compétences', 'taxonomy general name' ),
+		'singular_name'     => _x( 'Compétence', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Compétences' ),
+		'all_items'         => __( 'All Compétences' ),
+		'parent_item'       => __( 'Parent Compétence' ),
+		'parent_item_colon' => __( 'Parent Compétence:' ),
+		'edit_item'         => __( 'Edit Compétence' ),
+		'update_item'       => __( 'Update Compétence' ),
+		'add_new_item'      => __( 'Add New Compétence' ),
+		'new_item_name'     => __( 'New Compétence Name' ),
+		'menu_name'         => __( 'Compétence' ),
 	);
 
 	$args2 = array(
@@ -129,10 +129,10 @@
 		'show_ui'           => true,
 		'show_admin_column' => true,
 		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'tag' ),
+		'rewrite'           => array( 'slug' => 'competence' ),
 	);
 
-	register_taxonomy( 'Tag', array( 'projets' ), $args2 );
+	register_taxonomy( 'Competence', array( 'projets' ), $args2 );
 
 }
 

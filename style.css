@@ -549,10 +549,17 @@ h6 {
 #logo {
   margin: 2em 0;
   text-align: right;
+  position:relative;
 }
 /* line 53, ../scss/screen.scss */
 #logo h1 {
   margin: 0;
+}
+
+#logo span{
+  position:absolute;
+  bottom:-1.6em;
+  right:0.1em;
 }
 
 /* line 56, ../scss/screen.scss */
@@ -739,6 +746,7 @@ section.content {
 /* line 222, ../scss/screen.scss */
 section {
   margin-bottom: 1em;
+  padding-bottom: 1em;
   border-bottom: 0.3em solid rgba(0, 0, 0, 0.1);
 }
 /* line 228, ../scss/screen.scss */
@@ -878,16 +886,25 @@ form ul li:after {
 /* line 322, ../scss/screen.scss */
 form ul {
   list-style-type: none;
+  margin:0;
+  padding:0;
 }
 /* line 323, ../scss/screen.scss */
 form ul li {
   margin-bottom: 1em;
+}
+form ul li:last-child{
+  margin-bottom: 0;
 }
 /* line 327, ../scss/screen.scss */
 form fieldset {
   border: none;
   margin: 0;
   padding: 0;
+}
+
+legend{
+  margin-bottom: 0.5em;
 }
 /* line 332, ../scss/screen.scss */
 form label {
