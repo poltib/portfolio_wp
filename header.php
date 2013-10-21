@@ -10,6 +10,7 @@
         <title><?php bloginfo( 'name' ); ?> <?php wp_title(); ?></title>
         <meta name="description" content="<?php bloginfo( 'description' ); ?>">
         <link rel="profile" href="http://gmpg.org/xfn/11" />
+        <link rel="shortcut icon" type="image/png" href="img/happy.png" />
         <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>" type="text/css" media="screen" />
         <script src="<?php bloginfo('template_url'); ?>/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />

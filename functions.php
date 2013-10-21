@@ -53,7 +53,7 @@
 					),
 				'public' => true,
 				'has_archive' => true,
-				'supports' => array('title', 'editor', 'excerpt'),
+				'supports' => array('title', 'excerpt'),
 				'rewrite' => array('slug' => 'projets')
 
 				) 

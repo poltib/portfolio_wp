@@ -1,16 +1,16 @@
 <?php
 	get_header();
 ?>
-<?php the_terms(); ?>
-<section class="projet">
-	<h2></h2>
+
+
+<section class="news blog">
 	<?php if (have_posts()) : ?>
+	<h2 class="taxonomyHeading" role="heading" aria-level="3"><?php _e( 'Projets réalisés utilisant ', 'portfolio' ); ?><?php single_term_title(); ?></h2>
     <?php while (have_posts()) : the_post(); ?>
-      <div class="text">
-        <h3 class="project-name"><?php the_title(); ?></h3>
-        <p class="project-description"><?php the_excerpt(); ?></p>
-        <?php the_post_thumbnail('thumbnail'); ?>
-      </div>
+      <a href="<?php the_permalink()?>"><article role="article">
+        <h3 role="heading" aria-level="3"><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
+        <div><?php the_excerpt(); ?></div>
+      </article></a>
     <?php endwhile; ?>
   <?php endif; ?>
 

@@ -9,9 +9,16 @@
 
 	    	<article role="article">
 	    		<div class="text">
-				<h3 class="post" role="heading" aria-level="3"><?php the_title(); ?> <span><?php the_terms( $post->ID, 'Competence', '', ' / ' ); ?></span></h3>
-				<figure><img src="<?php the_field('image'); ?>" alt=""></figure>
-				<p><?php the_content(); ?></p>
+				<h3 role="heading" aria-level="3"><?php the_title(); ?></h3>
+				<span><?php the_terms( $post->ID, 'Competence', 'Technologies : ', ' / ' ); ?></span>
+
+				<h4 role="heading" aria-level="4"><?php the_field('titre_section_une'); ?></h4>
+				<figure><img src="<?php the_field('image_section_une'); ?>" alt=""></figure>
+				<div><?php the_field('texte_section_une'); ?></div>
+
+				<h4 role="heading" aria-level="4"><?php the_field('titre_section_deux'); ?></h4>
+				<figure><img src="<?php the_field('image_section_deux'); ?>" alt=""></figure>
+				<div><?php the_field('texte_section_deux'); ?></div>
 				</div>
 			</article>
 

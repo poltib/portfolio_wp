@@ -9,7 +9,7 @@
 				<h2 class="post-title" role="heading" aria-level="2">
 					<?php the_title() ?>
 				</h2>
-				<p><?php the_content() ?></p>
+				<div><?php the_content() ?></div>
 			</div>
 		</section>
 	<?php endwhile; ?>
@@ -27,8 +27,8 @@
 
 					  <!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
-						 	<h2><?php the_title() ?></h2>
-							<div><?php the_content() ?></div>
+						 	<h2 role="heading" aria-level="2"><?php the_title() ?></h2>
+							<div><?php the_excerpt() ?></div>
 					  <?php endwhile; ?>
 					  <!-- end of the loop -->
 
@@ -52,10 +52,10 @@
 					  <!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						 	<a href="<?php the_permalink(); ?>"><figure>
-							<img src="<?php the_field('image')?>" alt="">
+							<img src="<?php the_field('image_section_une')?>" alt="">
 							<figcaption>
-								<h3><?php the_title(); ?></h3>
-								<p><?php the_excerpt(); ?></p>
+								<h3 role="heading" aria-level="3"><?php the_title(); ?></h3>
+								<div><?php the_excerpt(); ?></div>
 							</figcaption>
 							</figure></a>
 					  <?php endwhile; ?>
@@ -82,10 +82,10 @@
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 						
 						 	<a href="<?php the_permalink(); ?>"><figure>
-							<img src="<?php the_field('image')?>" alt="">
+							<img src="<?php the_field('image_section_une')?>" alt="">
 							<figcaption>
-								<h3><?php the_title(); ?></h3>
-								<p><?php the_excerpt(); ?></p>
+								<h3 role="heading" aria-level="3"><?php the_title(); ?></h3>
+								<div><?php the_excerpt(); ?></div>
 							</figcaption>
 							</figure></a>
 						
@@ -109,15 +109,15 @@
 
 				  <!-- pagination here -->
 					<div class="newPosts">				  
-					<h2 class="newsPosts">Derniers articles du blog</h2>
+					<h2 class="newsPosts" role="heading" aria-level="2">Derniers articles du blog</h2>
 				<!-- the loop -->
 				  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 				  
 				    <a href="<?php the_permalink(); ?>">
-				    	<article>
-							<h3><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
+				    	<article role="article">
+							<h3 role="heading" aria-level="3"><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
 							<span>Posté par <?php the_author() ?></span>
-							<p><?php the_excerpt(); ?></p>
+							<div><?php the_excerpt(); ?></div>
 							<span class="more">Lire la suite</span>
 						</article>
 					</a>
@@ -146,9 +146,9 @@
 					<!-- the loop -->
 					  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 					  
-					    	<article>
-								<h3><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
-								<p><?php the_excerpt(); ?></p>
+					    	<article role="article">
+								<h3 role="heading" aria-level="3"><?php the_title(); ?> <span><time date="<?php the_time('Y-m-d') ?>" pubdate><?php echo(get_the_date()) ?></time></span></h3>
+								<div><?php the_excerpt(); ?></div>
 							</article>
 					  <?php endwhile; ?>
 					  <!-- end of the loop -->

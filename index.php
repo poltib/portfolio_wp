@@ -6,7 +6,9 @@
 	<h2 class="hidden">Liste des articles</h2>
 					<?php 
 					// the query
-					$the_query = new WP_Query( 'post_type=post' ); ?>
+					$paged = (get_query_var( 'paged' ))?get_query_var( 'paged' ):1;
+
+					$the_query = new WP_Query( array('post_type' => 'post', 'posts_per_page' => 3, 'paged' => $paged )); ?>
 
 					<?php if ( $the_query->have_posts() ) : ?>
 
@@ -26,6 +28,10 @@
 					  <!-- end of the loop -->
 
 					  <!-- pagination here -->
+					  <div class="pagination">
+					  	<?php previous_posts_link( ) ?>
+					  	<?php next_posts_link( ) ?>
+					  	</div>
 
 					  <?php wp_reset_postdata(); ?>
 

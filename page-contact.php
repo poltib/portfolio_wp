@@ -14,12 +14,13 @@
 			<h2 title="contact" role="heading" aria-level="2">
 			<?php the_title() ?>
 			</h2>
-			<p><?php the_content() ?></p>
-			<ul class="vcard">
-				<li class="fn"><?php the_field('prenom') ?>&nbsp;<?php the_field('nom') ?></li>
-				<li class="email"><a href="mailto:<?php the_field('adresse_e-mail') ?>"><?php the_field('adresse_e-mail') ?></a></li>
-				<li class="tel"><?php the_field('numero_de_telephone') ?></li>
-				<li class="adr">
+			<div><?php the_content() ?></div>
+			<h3 role="heading" aria-level="3"><?php _e( 'Coordonnées', 'portfolio' ); ?></h3>
+			<ul class="vcard" itemscope itemtype="http://schema.org/Person">
+				<li class="fn" itemprop="name"><?php the_field('prenom') ?>&nbsp;<?php the_field('nom') ?></li>
+				<li class="email" itemprop="email"><a href="mailto:<?php the_field('adresse_e-mail') ?>"><?php the_field('adresse_e-mail') ?></a></li>
+				<li class="tel" itemprop="telephone"><?php the_field('numero_de_telephone') ?></li>
+				<li class="adr" itemprop="address">
 					<span class="street-address"><?php the_field('rue_et_numero') ?></span>
 					<span class="postal-code"><?php the_field('code_postal') ?></span>,&nbsp;
 					<span class="locality"><?php the_field('ville') ?></span>,&nbsp;

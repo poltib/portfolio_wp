@@ -20,7 +20,7 @@
 <?php endwhile; ?>
 <?php endif; ?>
 <section class="projets">
-	<h2 class="hidden">Projets</h2>
+	<h2 class="hidden"><?php _e( 'Apperçu des projets réalisés', 'portfolio' ); ?></h2>
 	<?php 
 	// the query
 	$the_query = new WP_Query( array( 'post_type' => 'projets' , 'Genre' => 'projets')); ?>
@@ -35,8 +35,8 @@
 	    	<article role="article">
 	    		<a class="detail" href="<?php the_permalink(); ?>">Détails sur ce projet</a>
 				<h3 role="heading" aria-level="3"><?php the_title(); ?></h3>
-				<figure><img src="<?php the_field('image'); ?>" alt="<?php the_title(); ?>"></figure>
-				<p><?php the_content(); ?></p>
+				<figure><img src="<?php the_field('image_section_une'); ?>" alt="<?php the_title(); ?>"></figure>
+				<div><?php the_field('texte_section_une'); ?></div>
 				<div><?php the_terms( $post->ID, 'Competence', 'Technologies: ', ' / ' ); ?></div>
 				
 			</article>
